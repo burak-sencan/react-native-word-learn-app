@@ -28,8 +28,6 @@ export default function App() {
             } else if (route.name === 'EditWord') {
               iconName = focused ? 'construct-sharp' : 'construct-outline'
             }
-
-            // You can return any component that you like here!
             return <Ionicons name={iconName} size={size} color={color} />
           },
           tabBarActiveTintColor: '#6A4C93',
