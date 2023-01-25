@@ -32,7 +32,7 @@ export default function App() {
             // You can return any component that you like here!
             return <Ionicons name={iconName} size={size} color={color} />
           },
-          tabBarActiveTintColor: '#565A9F',
+          tabBarActiveTintColor: '#6A4C93',
           tabBarInactiveTintColor: '#555',
         })}>
         <Tab.Screen options={{ title: 'Home', headerShown: false }} name='Home' component={Home} />
