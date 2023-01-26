@@ -11,8 +11,6 @@ const Synonyms = () => {
   )
 }
 
-export default Synonyms
-
 const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
@@ -25,3 +23,5 @@ const styles = StyleSheet.create({
     ...containerShadow,
   },
 })
+
+export default Synonyms

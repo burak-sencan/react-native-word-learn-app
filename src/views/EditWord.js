@@ -8,4 +8,19 @@ const EditWord = () => {
   )
 }
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'space-between',
+    alignContent: 'center',
+    padding: 20,
+  },
+  buttonContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-end',
+  },
+})
+
 export default EditWord

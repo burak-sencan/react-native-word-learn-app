@@ -31,8 +31,6 @@ const Defination = () => {
   )
 }
 
-export default Defination
-
 const styles = StyleSheet.create({
   container: {
     width: '100%',
@@ -44,3 +42,5 @@ const styles = StyleSheet.create({
     ...containerShadow,
   },
 })
+
+export default Defination

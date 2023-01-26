@@ -13,8 +13,6 @@ const Dice = () => {
   )
 }
 
-export default Dice
-
 const styles = StyleSheet.create({
   container: {},
 
@@ -28,3 +26,5 @@ const styles = StyleSheet.create({
     ...circleShadow,
   },
 })
+
+export default Dice

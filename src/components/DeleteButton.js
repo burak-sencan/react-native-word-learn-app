@@ -13,7 +13,6 @@ const DeleteButton = () => {
   )
 }
 
-export default DeleteButton
 const styles = StyleSheet.create({
   container: {},
 
@@ -27,3 +26,5 @@ const styles = StyleSheet.create({
     ...circleShadow,
   },
 })
+
+export default DeleteButton

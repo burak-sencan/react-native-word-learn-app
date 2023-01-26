@@ -28,8 +28,6 @@ const WordCard = () => {
   )
 }
 
-export default WordCard
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -44,3 +42,5 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end',
   },
 })
+
+export default WordCard
