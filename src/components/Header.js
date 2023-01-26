@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import colors from '../theme/color'
 import Ionicons from 'react-native-vector-icons/Ionicons'
+import { boxShadow, circleShadow, containerShadow } from '../theme/commonStyles'
 
 const Header = () => {
   return (
@@ -29,14 +30,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
     backgroundColor: colors.white,
     borderRadius: 5,
-    shadowColor: '#000000',
-    shadowOffset: {
-      width: 0,
-      height: 6,
-    },
-    shadowOpacity: 0.2,
-    shadowRadius: 5.62,
-    elevation: 8,
+    ...containerShadow,
   },
   text: {
     flexDirection: 'row',
@@ -49,13 +43,6 @@ const styles = StyleSheet.create({
     height: 60,
     borderRadius: 60 / 2,
     backgroundColor: colors.white,
-    shadowColor: '#000000',
-    shadowOffset: {
-      width: 0,
-      height: 6,
-    },
-    shadowOpacity: 1,
-    shadowRadius: 3,
-    elevation: 5,
+    ...circleShadow,
   },
 })

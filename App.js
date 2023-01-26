@@ -1,10 +1,10 @@
 import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Ionicons from 'react-native-vector-icons/Ionicons'
-import Home from './views/Home'
-import WordCard from './views/WordCard'
-import Translate from './views/Translate'
-import EditWord from './views/EditWord'
+import Home from './src/views/Home'
+import WordCard from './src/views/WordCard'
+import Translate from './src/views/Translate'
+import EditWord from './src/views/EditWord'
 
 const Tab = createBottomTabNavigator()
 

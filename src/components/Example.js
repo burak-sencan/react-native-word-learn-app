@@ -1,5 +1,6 @@
 import { View, Text, StyleSheet } from 'react-native'
 import colors from '../theme/color'
+import { containerShadow } from '../theme/commonStyles'
 
 const Example = () => {
   return (
@@ -21,13 +22,6 @@ const styles = StyleSheet.create({
     marginTop: 20,
     backgroundColor: colors.white,
     borderRadius: 5,
-    shadowColor: '#000000',
-    shadowOffset: {
-      width: 0,
-      height: 6,
-    },
-    shadowOpacity: 0.2,
-    shadowRadius: 5.62,
-    elevation: 8,
+    ...containerShadow,
   },
 })
