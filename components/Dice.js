@@ -15,14 +15,7 @@ const Dice = () => {
 export default Dice
 
 const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: '100%',
-    height: 100,
-    marginTop: 20,
-  },
+  container: {},
 
   circle: {
     alignItems: 'center',

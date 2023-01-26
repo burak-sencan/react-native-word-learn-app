@@ -1,24 +1,24 @@
 import { View, Text, StyleSheet } from 'react-native'
 import colors from '../theme/color'
 
-const Synonyms = () => {
+const Example = () => {
   return (
     <View style={styles.container}>
-      <Text style={{ fontSize: 24, color: colors.black }}>Synonyms</Text>
-      <Text style={{ fontSize: 20, color: colors.black }}>malus pumila</Text>
+      <Text style={{ fontSize: 24, color: colors.black }}>Example</Text>
+      <Text style={{ fontSize: 20, color: colors.black }}>I eat apple.</Text>
     </View>
   )
 }
 
-export default Synonyms
+export default Example
 
 const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
     width: '100%',
     height: 80,
-    padding: 10,
-    marginTop: 15,
+    paddingHorizontal: 10,
+    marginTop: 20,
     backgroundColor: colors.white,
     borderRadius: 5,
     shadowColor: '#000000',

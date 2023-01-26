@@ -1,27 +1,28 @@
 import { View, StyleSheet, TouchableOpacity } from 'react-native'
-import Ionicons from 'react-native-vector-icons/Ionicons'
 import colors from '../theme/color'
+import Ionicons from 'react-native-vector-icons/Ionicons'
 
-const SaveButton = () => {
+const NextButton = () => {
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.circle}>
-        <Ionicons name='bookmark-sharp' size={20} color={colors.green} />
+        <Ionicons name='chevron-forward-outline' size={48} color={colors.orange} />
       </TouchableOpacity>
     </View>
   )
 }
 
-export default SaveButton
+export default NextButton
+
 const styles = StyleSheet.create({
   container: {},
 
   circle: {
     alignItems: 'center',
     justifyContent: 'center',
-    width: 60,
-    height: 60,
-    borderRadius: 60 / 2,
+    width: 100,
+    height: 100,
+    borderRadius: 100 / 2,
     backgroundColor: colors.white,
     shadowColor: '#000000',
     shadowOffset: {

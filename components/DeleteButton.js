@@ -2,17 +2,17 @@ import { View, StyleSheet, TouchableOpacity } from 'react-native'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import colors from '../theme/color'
 
-const SaveButton = () => {
+const DeleteButton = () => {
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.circle}>
-        <Ionicons name='bookmark-sharp' size={20} color={colors.green} />
+        <Ionicons name='trash' size={20} color={colors.red} />
       </TouchableOpacity>
     </View>
   )
 }
 
-export default SaveButton
+export default DeleteButton
 const styles = StyleSheet.create({
   container: {},
 
