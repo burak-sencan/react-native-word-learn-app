@@ -1,5 +1,5 @@
 import { View, StyleSheet } from 'react-native'
-import InputText from '../components/InputText'
+import Search from '../components/Search'
 import { LinearGradient } from 'expo-linear-gradient'
 import Defination from '../components/Defination'
 import Synonyms from '../components/Synonyms'
@@ -14,7 +14,7 @@ const Translate = () => {
       end={{ x: 0.5, y: 0.6 }}
       colors={['#fff', '#f9f9f9']}>
       <View>
-        <InputText />
+        <Search />
         <Defination />
         <Synonyms />
         <Example />
@@ -33,6 +33,8 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'space-between',
     alignContent: 'center',
-    padding: 20,
+    paddingTop: 40,
+    paddingHorizontal: 20,
+    paddingBottom: 20,
   },
 })

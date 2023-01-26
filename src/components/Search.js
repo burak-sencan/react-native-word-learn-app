@@ -1,11 +1,11 @@
-import { StyleSheet, TextInput, View } from 'react-native'
+import { StyleSheet, TextInput } from 'react-native'
 import { useState } from 'react'
 import colors from '../theme/color'
 import { containerShadow } from '../theme/commonStyles'
 
-const InputText = () => {
+const Search = () => {
   const [text, onChangeText] = useState('')
-  console.log(text)
+
   return (
     <TextInput
       style={styles.container}
@@ -18,11 +18,7 @@ const InputText = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
     height: 80,
-    marginTop: 20,
     padding: 20,
     fontSize: 24,
     color: '#888',
@@ -32,4 +28,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default InputText
+export default Search
