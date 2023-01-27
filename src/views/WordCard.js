@@ -11,9 +11,9 @@ const WordCard = () => {
   return (
     <LinearGradient
       style={[styles.container]}
-      start={{ x: 0.8, y: 0.1 }}
-      end={{ x: 0.5, y: 0.6 }}
-      colors={['#fff', '#f9f9f9']}>
+      start={{ x: 1, y: 0 }}
+      end={{ x: 1, y: 0 }}
+      colors={['#f7f7f7', '#f9f9f9', '#f7f7f7']}>
       <View>
         <Header />
         <Defination />

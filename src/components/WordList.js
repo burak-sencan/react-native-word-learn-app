@@ -20,10 +20,8 @@ const WordList = () => {
   return (
     <ScrollView style={styles.container}>
       {wordList.map((word, idx) => (
-        <View style={styles.tableItem}>
-          <Text style={{ fontSize: 18, color: colors.black }} key={idx}>
-            {word.word}
-          </Text>
+        <View style={styles.tableItem} key={idx}>
+          <Text style={{ fontSize: 18, color: colors.black }}>{word.word}</Text>
           <DeleteButton />
         </View>
       ))}
