@@ -33,7 +33,7 @@ const WordList = () => {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 20,
+    paddingHorizontal: 20,
     backgroundColor: colors.white,
     borderRadius: 5,
     ...containerShadow,
@@ -42,10 +42,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingVertical: 10,
+    padding: 10,
     paddingRight: 2,
     borderBottomWidth: 1,
-    borderColor: colors.lightBlack,
+    borderColor: 'rgba(0,0,0,0.2)',
+    marginBottom: -1,
   },
 })
 
