@@ -1,28 +1,19 @@
 import { View, Text, StyleSheet, ScrollView } from 'react-native'
+import colors from '../theme/color'
+import { containerShadow } from '../theme/commonStyles'
 import DeleteButton from './DeleteButton'
 
 const wordList = [
-  {
-    word: 'Apple',
-  },
-  {
-    word: 'Apple',
-  },
-  {
-    word: 'Apple',
-  },
-  {
-    word: 'Apple',
-  },
-  {
-    word: 'Apple',
-  },
-  {
-    word: 'Apple',
-  },
-  {
-    word: 'Apple',
-  },
+  { word: 'Apple' },
+  { word: 'Apple' },
+  { word: 'Apple' },
+  { word: 'Apple' },
+  { word: 'Apple' },
+  { word: 'Apple' },
+  { word: 'Apple' },
+  { word: 'Apple' },
+  { word: 'Apple' },
+  { word: 'Apple' },
 ]
 
 const WordList = () => {
@@ -30,7 +21,9 @@ const WordList = () => {
     <ScrollView style={styles.container}>
       {wordList.map((word, idx) => (
         <View style={styles.tableItem}>
-          <Text key={idx}>{word.word}</Text>
+          <Text style={{ fontSize: 18, color: colors.black }} key={idx}>
+            {word.word}
+          </Text>
           <DeleteButton />
         </View>
       ))}
@@ -39,13 +32,19 @@ const WordList = () => {
 }
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    padding: 10,
+    backgroundColor: colors.white,
+    borderRadius: 5,
+    ...containerShadow,
+  },
   tableItem: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: 10,
     borderBottomWidth: 1,
+    borderColor: colors.lightBlack,
   },
 })
 

@@ -5,8 +5,8 @@ import { containerShadow } from '../theme/commonStyles'
 const Example = () => {
   return (
     <View style={styles.container}>
-      <Text style={{ fontSize: 24, color: colors.black }}>Example</Text>
-      <Text style={{ fontSize: 20, color: colors.black }}>I eat apple.</Text>
+      <Text style={{ fontSize: 22, color: colors.black }}>Example</Text>
+      <Text style={{ fontSize: 18, color: colors.lightBlack }}>I eat apple.</Text>
     </View>
   )
 }

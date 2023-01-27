@@ -5,8 +5,8 @@ import { containerShadow } from '../theme/commonStyles'
 const Synonyms = () => {
   return (
     <View style={styles.container}>
-      <Text style={{ fontSize: 24, color: colors.black }}>Synonyms</Text>
-      <Text style={{ fontSize: 20, color: colors.black }}>malus pumila</Text>
+      <Text style={{ fontSize: 22, color: colors.black }}>Synonyms</Text>
+      <Text style={{ fontSize: 18, color: colors.lightBlack }}>malus pumila</Text>
     </View>
   )
 }
