@@ -1,16 +1,20 @@
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import colors from '../theme/color'
 import Ionicons from 'react-native-vector-icons/Ionicons'
-import { boxShadow, circleShadow, containerShadow } from '../theme/commonStyles'
+import { circleShadow, containerShadow } from '../theme/commonStyles'
 
 const Header = ({ en, type }) => {
   return (
     <View style={styles.container}>
       <View style={styles.text}>
-        <Text style={{ fontSize: 40, color: colors.purple }}>{en}</Text>
-        <Text style={{ fontSize: 15, color: colors.black, marginBottom: -40 }}>{type}</Text>
+        <Text style={{ fontSize: 40, color: colors.purple, textTransform: 'capitalize' }}>
+          {en}
+        </Text>
+        <Text style={{ fontSize: 15, color: colors.black, marginLeft: 2, marginBottom: -40 }}>
+          {type}
+        </Text>
       </View>
-      <TouchableOpacity title='asd' style={styles.circle}>
+      <TouchableOpacity style={styles.circle}>
         <Ionicons name='volume-high-sharp' size={20} color={colors.purple} />
       </TouchableOpacity>
     </View>

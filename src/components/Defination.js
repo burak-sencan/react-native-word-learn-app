@@ -13,12 +13,11 @@ const Defination = ({ meanings, level }) => {
         style={{
           flexDirection: 'row',
           marginVertical: 10,
-          gap: 10,
           justifyContent: 'space-between',
         }}>
-        <ScrollView>
+        <ScrollView style={{ marginRight: 20 }}>
           {meanings?.map((meaning, idx) => (
-            <View key={idx}>
+            <View style={{ paddingVertical: 10 }} key={idx}>
               <Text style={{ fontSize: 18, color: colors.purple, overflow: 'hidden' }}>
                 {meaning?.partOfSpeech}
               </Text>
@@ -46,6 +45,7 @@ const styles = StyleSheet.create({
     height: 300,
     padding: 10,
     marginTop: 20,
+    overflow: 'hidden',
     backgroundColor: colors.white,
     borderRadius: 5,
     ...containerShadow,
