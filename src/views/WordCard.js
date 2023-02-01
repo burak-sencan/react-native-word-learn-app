@@ -2,7 +2,6 @@ import { LinearGradient } from 'expo-linear-gradient'
 import { StyleSheet, Text, View } from 'react-native'
 import Defination from '../components/Defination'
 import DeleteButton from '../components/DeleteButton'
-import Example from '../components/Example'
 import Header from '../components/Header'
 import NextButton from '../components/NextButton'
 import Synonyms from '../components/Synonyms'
@@ -18,7 +17,6 @@ const WordCard = () => {
         <Header />
         <Defination />
         <Synonyms />
-        <Example />
       </View>
       <View style={[styles.buttonContainer]}>
         <DeleteButton />

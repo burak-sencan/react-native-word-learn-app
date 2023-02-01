@@ -3,7 +3,6 @@ import Search from '../components/Search'
 import { LinearGradient } from 'expo-linear-gradient'
 import Defination from '../components/Defination'
 import Synonyms from '../components/Synonyms'
-import Example from '../components/Example'
 import SaveButton from '../components/SaveButton'
 
 const Translate = () => {
@@ -17,7 +16,6 @@ const Translate = () => {
         <Search />
         <Defination />
         <Synonyms />
-        <Example />
       </View>
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'flex-end' }}>
         <SaveButton />

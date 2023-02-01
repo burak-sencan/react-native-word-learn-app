@@ -3,12 +3,12 @@ import colors from '../theme/color'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import { boxShadow, circleShadow, containerShadow } from '../theme/commonStyles'
 
-const Header = () => {
+const Header = ({ en, type }) => {
   return (
     <View style={styles.container}>
       <View style={styles.text}>
-        <Text style={{ fontSize: 40, color: colors.purple }}>Deerberry</Text>
-        <Text style={{ fontSize: 15, color: colors.black, marginBottom: -40 }}>Noun</Text>
+        <Text style={{ fontSize: 40, color: colors.purple }}>{en}</Text>
+        <Text style={{ fontSize: 15, color: colors.black, marginBottom: -40 }}>{type}</Text>
       </View>
       <TouchableOpacity title='asd' style={styles.circle}>
         <Ionicons name='volume-high-sharp' size={20} color={colors.purple} />

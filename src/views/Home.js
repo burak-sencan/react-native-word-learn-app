@@ -1,25 +1,36 @@
-import { View, StyleSheet } from 'react-native'
+// import { useEffect } from 'react'
+// import { fetchData } from '../features/home/homeSlice'
+
+import { View, StyleSheet, Text } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient'
 import Defination from '../components/Defination'
 import Dice from '../components/Dice'
 import Header from '../components/Header'
 import SaveButton from '../components/SaveButton'
 import Synonyms from '../components/Synonyms'
+import { useSelector } from 'react-redux'
+import Welcome from '../components/Welcome'
 
 const Home = () => {
+  const data = useSelector(state => state.home.data)
+
   return (
     <LinearGradient
       style={[styles.container]}
       start={{ x: 1, y: 0 }}
       end={{ x: 1, y: 0 }}
       colors={['#f7f7f7', '#f9f9f9', '#f7f7f7']}>
-      <View>
-        <Header />
-        <Defination />
-        <Synonyms />
-      </View>
+      {data !== null ? (
+        <View>
+          <Header en={data?.en} type={data?.type} />
+          <Defination level={data?.level} meanings={data?.data[0]?.meanings} />
+          <Synonyms meanings={data?.data[0]?.meanings} />
+        </View>
+      ) : (
+        <Welcome />
+      )}
       <View style={styles.buttonContainer}>
-        <SaveButton />
+        {data !== null ? <SaveButton /> : <View></View>}
         <Dice />
       </View>
     </LinearGradient>

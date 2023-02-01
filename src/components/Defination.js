@@ -3,30 +3,39 @@ import { View, Text, StyleSheet, ScrollView } from 'react-native'
 import colors from '../theme/color'
 import { containerShadow } from '../theme/commonStyles'
 
-const Defination = () => {
+const Defination = ({ meanings, level }) => {
   return (
     <View style={styles.container}>
       <View>
-        <Text style={{ fontSize: 22, color: colors.black }}>Defination</Text>
+        <Text style={{ fontSize: 22, color: colors.lightBlack }}>Defination</Text>
       </View>
-      <View style={{ flexDirection: 'row', marginVertical: 10, justifyContent: 'space-between' }}>
-        <Text style={{ fontSize: 20, color: colors.purple }}>deer+berry</Text>
-        <Text
-          style={{
-            fontSize: 20,
-
-            color: colors.purple,
-            textTransform: 'capitalize',
-          }}>
-          geyik üzümü
-        </Text>
+      <View
+        style={{
+          flexDirection: 'row',
+          marginVertical: 10,
+          gap: 10,
+          justifyContent: 'space-between',
+        }}>
+        <ScrollView>
+          {meanings?.map((meaning, idx) => (
+            <View key={idx}>
+              <Text style={{ fontSize: 18, color: colors.purple, overflow: 'hidden' }}>
+                {meaning?.partOfSpeech}
+              </Text>
+              <Text
+                style={{
+                  marginBottom: 10,
+                  fontSize: 18,
+                  color: colors.lightBlack,
+                  overflow: 'hidden',
+                }}>
+                {meaning?.definitions[0]?.definition}
+              </Text>
+            </View>
+          ))}
+        </ScrollView>
+        <Text style={{ fontSize: 18, color: colors.lightBlack }}>{level || ''}</Text>
       </View>
-      <ScrollView>
-        <Text style={{ fontSize: 18, color: colors.lightBlack, overflow: 'hidden' }}>
-          Small branching blueberry common in marshy areas of the eastern United States having
-          greenish or yellowish unpalatable berries reputedly eaten by deer
-        </Text>
-      </ScrollView>
     </View>
   )
 }
@@ -34,7 +43,7 @@ const Defination = () => {
 const styles = StyleSheet.create({
   container: {
     width: '100%',
-    height: 250,
+    height: 300,
     padding: 10,
     marginTop: 20,
     backgroundColor: colors.white,
