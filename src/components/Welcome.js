@@ -3,11 +3,11 @@ import { View, Text, StyleSheet } from 'react-native'
 import colors from '../theme/color'
 import { containerShadow } from '../theme/commonStyles'
 
-const Welcome = () => {
+const Welcome = ({text}) => {
   return (
     <View style={styles.container}>
       <Text style={{ fontSize: 24, color: colors.purple }}>Welcome</Text>
-      <Text style={{ fontSize: 24, color: colors.purple }}>Get Random Word !</Text>
+      <Text style={{ fontSize: 24, color: colors.purple }}>{text}</Text>
     </View>
   )
 }

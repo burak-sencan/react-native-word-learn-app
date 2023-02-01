@@ -1,14 +1,14 @@
 // import { useEffect } from 'react'
 // import { fetchData } from '../features/home/homeSlice'
+import { useSelector } from 'react-redux'
 
-import { View, StyleSheet, Text } from 'react-native'
+import { View, StyleSheet } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient'
 import Defination from '../components/Defination'
 import Dice from '../components/Dice'
 import Header from '../components/Header'
 import SaveButton from '../components/SaveButton'
 import Synonyms from '../components/Synonyms'
-import { useSelector } from 'react-redux'
 import Welcome from '../components/Welcome'
 
 const Home = () => {
@@ -27,7 +27,7 @@ const Home = () => {
           <Synonyms meanings={data?.data[0]?.meanings} />
         </View>
       ) : (
-        <Welcome />
+        <Welcome text={'Get Random Words!'} />
       )}
       <View style={styles.buttonContainer}>
         {data !== null ? <SaveButton /> : <View></View>}
