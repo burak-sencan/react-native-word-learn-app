@@ -13,7 +13,3 @@ class: invert
 ### Desing:
 
 - https://www.figma.com/file/FMHnhrBfLIr3BWBiOJyRhI/word?node-id=0%3A1&t=g3gLI0kYjO3dj4LY-1
-
-### APIs:
-- https://dictionaryapi.dev
-- https://rapidapi.com/googlecloud/api/google-translate1/
