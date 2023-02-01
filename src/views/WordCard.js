@@ -1,27 +1,33 @@
+import { useSelector } from 'react-redux'
 import { LinearGradient } from 'expo-linear-gradient'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import Defination from '../components/Defination'
 import DeleteButton from '../components/DeleteButton'
-import Example from '../components/Example'
 import Header from '../components/Header'
 import NextButton from '../components/NextButton'
 import Synonyms from '../components/Synonyms'
+import Welcome from '../components/Welcome'
 
 const WordCard = () => {
+  const savedWord = useSelector(state => state.wordCard.savedWord)
+
   return (
     <LinearGradient
       style={[styles.container]}
       start={{ x: 1, y: 0 }}
       end={{ x: 1, y: 0 }}
       colors={['#f7f7f7', '#f9f9f9', '#f7f7f7']}>
-      <View>
-        <Header />
-        <Defination />
-        <Synonyms />
-        <Example />
-      </View>
+      {savedWord !== null ? (
+        <View>
+          <Header />
+          <Defination />
+          <Synonyms />
+        </View>
+      ) : (
+        <Welcome text={'View Your Saved Words!'} />
+      )}
       <View style={[styles.buttonContainer]}>
-        <DeleteButton />
+        {savedWord !== null ? <DeleteButton /> : <View></View>}
         <NextButton />
       </View>
     </LinearGradient>

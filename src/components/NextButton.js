@@ -2,11 +2,18 @@ import { View, StyleSheet, TouchableOpacity } from 'react-native'
 import colors from '../theme/color'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import { circleShadow } from '../theme/commonStyles'
+import { useDispatch } from 'react-redux'
+import { getSavedWord } from '../features/wordCard/wordCardSlice'
 
 const NextButton = () => {
+  const dispatch = useDispatch()
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.circle}>
+      <TouchableOpacity
+        style={styles.circle}
+        onPress={() => {
+          dispatch(getSavedWord())
+        }}>
         <Ionicons name='chevron-forward-outline' size={48} color={colors.orange} />
       </TouchableOpacity>
     </View>
