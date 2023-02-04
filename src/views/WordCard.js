@@ -1,4 +1,6 @@
-import { useSelector } from 'react-redux'
+import { useFocusEffect } from '@react-navigation/native'
+import { useDispatch, useSelector } from 'react-redux'
+import { setKeys } from '../features/wordCard/wordCardSlice'
 import { LinearGradient } from 'expo-linear-gradient'
 import { StyleSheet, View } from 'react-native'
 import Defination from '../components/Defination'
@@ -7,9 +9,26 @@ import Header from '../components/Header'
 import NextButton from '../components/NextButton'
 import Synonyms from '../components/Synonyms'
 import Welcome from '../components/Welcome'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 const WordCard = () => {
   const data = useSelector(state => state.wordCard.savedWord)
+  const dispatch = useDispatch()
+
+  // Get all words
+  useFocusEffect(() => {
+    getAllKeys()
+  })
+
+  const getAllKeys = async () => {
+    let keys
+    try {
+      keys = await AsyncStorage.getAllKeys()
+    } catch (error) {
+      console.log(error)
+    }
+    dispatch(setKeys(keys.filter(key => key != 'EXPO_CONSTANTS_INSTALLATION_ID')))
+  }
 
   return (
     <LinearGradient

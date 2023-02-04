@@ -4,10 +4,13 @@ import Ionicons from 'react-native-vector-icons/Ionicons'
 import colors from '../theme/color'
 import { circleShadow } from '../theme/commonStyles'
 
-const DeleteButton = ({ id }) => {
+const DeleteButton = ({ id, wordList, setWordordList = null }) => {
   const handleDelete = async () => {
     try {
       await AsyncStorage.removeItem(`${id}`)
+      if (setWordordList) {
+        setWordordList(wordList.filter(word => word.id != id))
+      }
     } catch (error) {
       console.log(error)
     }

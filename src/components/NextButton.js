@@ -3,49 +3,35 @@ import { View, StyleSheet, TouchableOpacity } from 'react-native'
 import colors from '../theme/color'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import { circleShadow } from '../theme/commonStyles'
-import { useDispatch } from 'react-redux'
-import { getSavedWord } from '../features/wordCard/wordCardSlice'
-import { useFocusEffect } from '@react-navigation/native'
-
-let keys = []
-let idx = 0
+import { useDispatch, useSelector } from 'react-redux'
+import { getSavedWord, setIdx } from '../features/wordCard/wordCardSlice'
 
 const NextButton = () => {
   const dispatch = useDispatch()
-
-  // Get all word id
-  useFocusEffect(() => {
-    getAllKeys()
-  })
-
-  const getAllKeys = async () => {
-    try {
-      keys = await AsyncStorage.getAllKeys()
-    } catch (error) {
-      console.log(error)
-    }
-    keys = keys.filter(key => key != 'EXPO_CONSTANTS_INSTALLATION_ID')
-  }
+  const idx = useSelector(state => state.wordCard.idx)
+  const keys = useSelector(state => state.wordCard.keys)
 
   // EXPO_CONSTANTS_INSTALLATION_ID is default key for AsyncStorage
   const nextWord = async () => {
     let jsonValue
-    if (idx < keys.length) {
+    if (idx < keys.length - 1) {
       try {
         jsonValue = await AsyncStorage.getItem(keys[idx])
         jsonValue != null ? JSON.parse(jsonValue) : null
         dispatch(getSavedWord(jsonValue))
-        idx++
+        dispatch(setIdx(1))
       } catch (error) {
         console.log(error)
       }
     } else {
-      idx = 0
-      console.log('0da ')
-      jsonValue = await AsyncStorage.getItem(keys[idx])
-      jsonValue != null ? JSON.parse(jsonValue) : null
-      dispatch(getSavedWord(jsonValue))
-      idx++
+      try {
+        dispatch(setIdx(0))
+        jsonValue = await AsyncStorage.getItem(keys[idx])
+        jsonValue != null ? JSON.parse(jsonValue) : null
+        dispatch(getSavedWord(jsonValue))
+      } catch (error) {
+        console.log(error)
+      }
     }
   }
   return (
