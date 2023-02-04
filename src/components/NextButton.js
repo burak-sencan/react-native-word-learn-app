@@ -24,63 +24,30 @@ const NextButton = () => {
     } catch (error) {
       console.log(error)
     }
+    keys = keys.filter(key => key != 'EXPO_CONSTANTS_INSTALLATION_ID')
   }
 
   // EXPO_CONSTANTS_INSTALLATION_ID is default key for AsyncStorage
   const nextWord = async () => {
     let jsonValue
-    console.log(keys)
     if (idx < keys.length) {
-      if (keys[idx] != 'EXPO_CONSTANTS_INSTALLATION_ID') {
-        try {
-          jsonValue = await AsyncStorage.getItem(keys[idx])
-          jsonValue != null ? JSON.parse(jsonValue) : null
-          idx++
-          dispatch(getSavedWord(jsonValue))
-        } catch (error) {
-          console.log(error)
-        }
-      } else {
-        if (keys.length != 0) {
-          idx++
-          try {
-            jsonValue = await AsyncStorage.getItem(keys[idx])
-            jsonValue != null ? JSON.parse(jsonValue) : null
-            idx++
-            dispatch(getSavedWord(jsonValue))
-          } catch (error) {
-            console.log(error)
-          }
-        }
+      try {
+        jsonValue = await AsyncStorage.getItem(keys[idx])
+        jsonValue != null ? JSON.parse(jsonValue) : null
+        dispatch(getSavedWord(jsonValue))
+        idx++
+      } catch (error) {
+        console.log(error)
       }
     } else {
       idx = 0
-      if (keys[idx] != 'EXPO_CONSTANTS_INSTALLATION_ID') {
-        try {
-          jsonValue = await AsyncStorage.getItem(keys[idx])
-          jsonValue != null ? JSON.parse(jsonValue) : null
-          idx++
-          dispatch(getSavedWord(jsonValue))
-        } catch (error) {
-          console.log(error)
-        }
-      } else {
-        if (keys.length != 1) {
-          idx++
-          try {
-            jsonValue = await AsyncStorage.getItem(keys[idx])
-            jsonValue != null ? JSON.parse(jsonValue) : null
-            idx++
-            dispatch(getSavedWord(jsonValue))
-          } catch (error) {
-            console.log(error)
-          }
-        }
-      }
+      console.log('0da ')
+      jsonValue = await AsyncStorage.getItem(keys[idx])
+      jsonValue != null ? JSON.parse(jsonValue) : null
+      dispatch(getSavedWord(jsonValue))
+      idx++
     }
-    dispatch(getSavedWord(jsonValue))
   }
-
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.circle} onPress={nextWord}>
