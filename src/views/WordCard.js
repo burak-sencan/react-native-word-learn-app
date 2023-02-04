@@ -9,7 +9,7 @@ import Synonyms from '../components/Synonyms'
 import Welcome from '../components/Welcome'
 
 const WordCard = () => {
-  const savedWord = useSelector(state => state.wordCard.savedWord)
+  const data = useSelector(state => state.wordCard.savedWord)
 
   return (
     <LinearGradient
@@ -17,17 +17,17 @@ const WordCard = () => {
       start={{ x: 1, y: 0 }}
       end={{ x: 1, y: 0 }}
       colors={['#f7f7f7', '#f9f9f9', '#f7f7f7']}>
-      {savedWord !== null ? (
+      {data !== null ? (
         <View>
-          <Header />
-          <Defination />
-          <Synonyms />
+          <Header en={data?.en} type={data?.type} />
+          <Defination meanings={data?.data[0]?.meanings} level={data?.level} />
+          <Synonyms meanings={data?.data[0]?.meanings} />
         </View>
       ) : (
         <Welcome text={'View Your Saved Words!'} />
       )}
       <View style={[styles.buttonContainer]}>
-        {savedWord !== null ? <DeleteButton /> : <View></View>}
+        {data !== null ? <DeleteButton id={data.id} /> : <View></View>}
         <NextButton />
       </View>
     </LinearGradient>

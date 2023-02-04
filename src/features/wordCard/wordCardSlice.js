@@ -8,8 +8,12 @@ export const wordCardSlice = createSlice({
   name: 'wordCard',
   initialState,
   reducers: {
-    getSavedWord: state => {
-      state.savedWord = 'saved word one'
+    getSavedWord: (state, action) => {
+      try {
+        action.payload != null ? (state.savedWord = JSON.parse(action.payload)) : null
+      } catch (error) {
+        console.log(error)
+      }
     },
   },
 })

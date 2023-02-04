@@ -1,12 +1,22 @@
+import AsyncStorage from '@react-native-async-storage/async-storage'
 import { View, StyleSheet, TouchableOpacity } from 'react-native'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import colors from '../theme/color'
 import { circleShadow } from '../theme/commonStyles'
 
-const DeleteButton = () => {
+const DeleteButton = ({ id }) => {
+  const handleDelete = async () => {
+    try {
+      await AsyncStorage.removeItem(`${id}`)
+    } catch (error) {
+      console.log(error)
+    }
+    console.log('Deleted.')
+  }
+
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.circle}>
+      <TouchableOpacity style={styles.circle} onPress={handleDelete}>
         <Ionicons name='trash' size={20} color={colors.red} />
       </TouchableOpacity>
     </View>

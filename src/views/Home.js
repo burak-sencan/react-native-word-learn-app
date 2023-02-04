@@ -23,14 +23,14 @@ const Home = () => {
       {data !== null ? (
         <View>
           <Header en={data?.en} type={data?.type} />
-          <Defination level={data?.level} meanings={data?.data[0]?.meanings} />
+          <Defination meanings={data?.data[0]?.meanings} level={data?.level} />
           <Synonyms meanings={data?.data[0]?.meanings} />
         </View>
       ) : (
         <Welcome text={'Get Random Words!'} />
       )}
       <View style={styles.buttonContainer}>
-        {data !== null ? <SaveButton /> : <View></View>}
+        {data !== null ? <SaveButton data={data} /> : <View></View>}
         <Dice />
       </View>
     </LinearGradient>
