@@ -1,11 +1,14 @@
 import { View, StyleSheet } from 'react-native'
 import Search from '../components/Search'
 import { LinearGradient } from 'expo-linear-gradient'
-import Defination from '../components/Defination'
 import Synonyms from '../components/Synonyms'
 import SaveButton from '../components/SaveButton'
+import { useSelector } from 'react-redux'
+import Translation from '../components/Translation'
 
 const Translate = () => {
+  const data = useSelector(state => state.translate.data)
+
   return (
     <LinearGradient
       style={[styles.container]}
@@ -14,12 +17,11 @@ const Translate = () => {
       colors={['#f7f7f7', '#f9f9f9', '#f7f7f7']}>
       <View>
         <Search />
-        <Defination />
-        <Synonyms />
+        {data && <Translation data={data.data} />}
       </View>
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'flex-end' }}>
-        <SaveButton />
-      </View>
+      {/* <View style={{ flex: 1, justifyContent: 'flex-end', alignItems: 'flex-end' }}>
+        {data && <SaveButton />}
+      </View> */}
     </LinearGradient>
   )
 }

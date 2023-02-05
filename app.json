@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "react-native-word-learn-app",
-    "slug": "react-native-word-learn-app",
+    "name": "Kelime Ezberle",
+    "slug": "KelimeEzberle",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./src/assets/icon.png",
@@ -21,6 +21,8 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.XhenChen.KelimeEzberle",
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./src/assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
@@ -28,6 +30,11 @@
     },
     "web": {
       "favicon": "./src/assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "7081b21e-3851-4fcd-96a1-c5f3826cacc9"
+      }
     }
   }
 }

@@ -1,10 +1,10 @@
 import { useCallback, useState } from 'react'
 import { useFocusEffect } from '@react-navigation/native'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 import { View, Text, StyleSheet, ScrollView } from 'react-native'
 import { containerShadow } from '../theme/commonStyles'
 import colors from '../theme/color'
 import DeleteButton from './DeleteButton'
-import AsyncStorage from '@react-native-async-storage/async-storage'
 
 const WordList = () => {
   const [wordList, setWordordList] = useState([])
@@ -38,6 +38,7 @@ const WordList = () => {
     let temp = values.map(value => JSON.parse(value[1]))
     setWordordList(temp)
   }
+
   return (
     <ScrollView style={styles.container}>
       {wordList.map(word => (
